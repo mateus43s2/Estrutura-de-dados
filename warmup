@@ -1,0 +1,16 @@
+package warmup;
+
+/**
+ *
+ * @author 12117022
+ */
+public class WarmUp {
+
+    public static void main(String[] args) {
+        int[][] lista = new int [10][10];
+        for(int i = 0; i<10; i++)
+            for(int j = 0; j<10; j++)
+                lista[i][j]=i+j;
+        System.out.println(lista[7][3]);
+    }
+}

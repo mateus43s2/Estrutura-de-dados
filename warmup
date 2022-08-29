@@ -1,3 +1,4 @@
+1#
 package warmup;
 
 /**
@@ -12,5 +13,35 @@ public class WarmUp {
             for(int j = 0; j<10; j++)
                 lista[i][j]=i+j;
         System.out.println(lista[7][3]);
+    }
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+2#
+package warmup;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author 12117022
+ */
+public class Q2 {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int[] lista = new int[10];
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Informe o " + (i + 1) + "Âº valor: ");
+            lista[i] = entrada.nextInt();
+        }
+        for (int i = 0; i < 10; i++) {
+            if (lista[i] % 1 ==0)
+        }
     }
 }

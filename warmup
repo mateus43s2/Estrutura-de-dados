@@ -16,6 +16,7 @@ public class WarmUp {
     }
 }
 
+
 //2
 package warmup;
 
@@ -41,6 +42,8 @@ public class Q2 {
         }
     }
 }
+
+
 //3
 package warmup;
 
@@ -82,6 +85,8 @@ public class Q3 {
     }
 
 }
+
+
 //4
 package warmup;
 

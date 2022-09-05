@@ -1,4 +1,4 @@
-1#
+//1
 package warmup;
 
 /**
@@ -16,32 +16,139 @@ public class WarmUp {
     }
 }
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-2#
+//2
 package warmup;
-
-import java.util.Scanner;
 
 /**
  *
- * @author 12117022
+ * @author mateus 12117022
  */
+import java.util.Scanner;
+
 public class Q2 {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         int[] lista = new int[10];
         for (int i = 0; i < 10; i++) {
-            System.out.println("Informe o " + (i + 1) + "Âº valor: ");
+            System.out.println("Informe o " + (i + 1) + "º valor: ");
             lista[i] = entrada.nextInt();
         }
         for (int i = 0; i < 10; i++) {
-            if (lista[i] % 1 ==0)
+            if (lista[i] % 2 != 0 || lista[i] == 2) {
+                System.out.println("primo: " + lista[i]);
+            }
         }
     }
+}
+//3
+package warmup;
+
+/**
+ *
+ * @author mateus 12117022
+ */
+import java.util.Scanner;
+
+public class Q3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        String [] modelos = new String[5]; // nomes dos alunos 
+        int[] consumo = new int[5];
+        float[] litros = new float[5];
+        int menorconsumo = 0;
+        String carro = null;
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Modelo: ");
+            modelos[i] = entrada.next();
+        }
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Consumo: ");
+            consumo[i] = entrada.nextInt();
+            if (menorconsumo < consumo[i]) {
+                menorconsumo = consumo[i];
+                carro = modelos[i];
+            }
+            litros[i] =1000 / consumo[i];
+        }
+        System.out.println("O carro com o menor consumo é "+carro);
+        for (int i = 0; i < 5; i++) {
+            System.out.println("O carro "+ modelos[i] +" consome "+ litros[i] +" litros a cada 1000km");
+        }
+    }
+
+}
+//4
+package warmup;
+
+/**
+ *
+ * @author mateus 12117022
+ */
+import java.util.Scanner;
+
+public class Q4 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int[] dinheiro = new int[10];
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Dinheiro possuido pela pessoa na posição " + i +": ");
+            dinheiro[i] = entrada.nextInt();
+        }
+        System.out.print("O menor valor roubado foi: ");
+        int menor = entrada.nextInt();
+        int roubado = 0;
+        int i = 0;
+        while (i < 10) {
+            if (dinheiro[i] >= menor && dinheiro[i] % 10 == 0) {
+                roubado = roubado + dinheiro[i];
+                System.out.println("Bandido na posição: " + i);
+            }
+            i++;
+        }
+        System.out.println("O total roubado foi: " + roubado);
+
+    }
+}
+
+//5
+package warmup;
+
+/**
+ *
+ * @author mateus 12117022
+ */
+import java.util.Random;
+public class Q5 {
+
+    public static void main(String[] args) {
+        Random random = new Random();
+        int[] array = new int[5];
+        boolean[] trava = new boolean[5];
+        for (int i = 0; i < 5; i++) {
+            array[i] = random.nextInt(1000);
+        }
+        for(int i = 0; i <5; i++)
+        {
+            array[i] = array[i]*4;
+            trava[i] = true;
+        }
+        for (int i = 0; i < 5; i++) {
+            if (trava[i] == false) {
+                array[i] = 0;
+            }
+            System.out.println(array[i]);
+
+        }
+
+    }
+
 }

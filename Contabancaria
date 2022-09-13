@@ -1,0 +1,42 @@
+class TContaBancaria {
+
+    int numero;
+    int agencia;
+    String nome;
+    int cpf;
+    float saldo;
+
+    public float depositar(float valor) {
+        this.saldo += valor;
+        return this.saldo;
+    }
+    public float retirarValor(float reduzir){
+        this.saldo -= valor;
+        return this.saldo;
+    }
+  // se usar objeto.saldo ele irá retornar o valor do saldo.
+    public float transferir( int transferencia,int a,int b){
+      a.saldo -= transferencia;
+      b.saldo +=  transferencia;
+    }
+}
+
+import java.util.Scanner;
+
+class Main {
+
+    public static void main(String[] args) {
+      Scanner entrada = new Scanner(System.in);
+      System.out.println("Quantas contas deseja criar?: ");
+        int qt = entrada.nextInt();
+        for (int i = 0; i < qt; i++) {
+            TContaBancaria i = new TContaBancaria();
+          i.numero = entrada.nextInt();
+          i.agencia = entrada.nextInt();
+          i.nome = "Marcos";
+          i.cpf = entrada.nextInt();
+          i.saldo = entrada.nextFloat();
+
+        }
+    }
+}

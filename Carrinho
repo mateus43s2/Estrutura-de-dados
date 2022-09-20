@@ -1,0 +1,129 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pkgsuper;
+/**
+ *
+ * @author 12117022
+ */
+public class Super {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+    }
+    
+}
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pkgsuper;
+
+/**
+ *
+ * @author 12117022
+ */
+public class Carrinho {
+    int primeiro = 0;
+    int ultimo = 0;
+    int max;
+    private Produto[] Lista_Produtos = new Produto[max];
+    
+    public Carrinho(int max){
+        this.max = max;
+    }
+    public boolean vazio(){
+        return (this.primeiro == this.ultimo);
+    }
+    public void Inserir(Produto prod){
+        if(this.ultimo >= this.Lista_Produtos.length){
+            System.out.println("Carrinho cheio, não é permitido adcionar mais produtos");
+        }else{
+            this.Lista_Produtos[this.ultimo] = prod;
+            this.ultimo = this.ultimo + 1;
+            System.out.println("Produto adcionado com sucesso");
+        }
+    }
+    
+}
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pkgsuper;
+
+/**
+ *
+ * @author 12117022
+ */
+public class Produto {
+    private int qtd;
+    private float valor;
+    private String nomeprod;
+    private String descricao;
+
+    /**
+     * @return the qtd
+     */
+    public int getQtd() {
+        return qtd;
+    }
+
+    /**
+     * @param qtd the qtd to set
+     */
+    public void setQtd(int qtd) {
+        this.qtd = qtd;
+    }
+
+    /**
+     * @return the valor
+     */
+    public float getValor() {
+        return valor;
+    }
+
+    /**
+     * @param valor the valor to set
+     */
+    public void setValor(float valor) {
+        this.valor = valor;
+    }
+
+    /**
+     * @return the nomeprod
+     */
+    public String getNomeprod() {
+        return nomeprod;
+    }
+
+    /**
+     * @param nomeprod the nomeprod to set
+     */
+    public void setNomeprod(String nomeprod) {
+        this.nomeprod = nomeprod;
+    }
+
+    /**
+     * @return the descricao
+     */
+    public String getDescricao() {
+        return descricao;
+    }
+
+    /**
+     * @param descricao the descricao to set
+     */
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    
+}

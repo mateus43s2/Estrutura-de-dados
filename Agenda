@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package atv;
-import javax.swing.*;
 /**
  *
  * @author mateus
@@ -15,7 +9,7 @@ public class atv {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Pilha p = new Pilha(3);
+        Pilha p = new Pilha(4);
         if(!p.full()) p.push("Julio",958675548);
         else System.out.println("Pilha cheia");
         if(!p.full()) p.push("Maria",958648658);
@@ -25,30 +19,11 @@ public class atv {
         if(!p.full()) p.push("Vitor",957867554);
         else System.out.println("Pilha cheia");
         System.out.println(p.top());
-        String x=JOptionPane.showInputDialog("""
-                                             Programa Pilha
-                                             0: Sair
-                                             1: Inserir itens
-                                             2: Remover itens
-                                             3: Imprimir Tamanho
-                                             4: Imprimir Iten Topo""");
-        switch (x){
-            case "1": JOptionPane.showInputDialog("Programa Pilha"+
-                "\n0: Sair"+
-                "\n1: Inserir itens"+
-                "\n2: Remover itens"+
-                "\n3: Imprimir Tamanho"+
-                "\n4: Imprimir Iten Topo");
-        }
-        
-    }
-    
+        System.out.println("O tamanho da pilha atual é: "+p.size());
+
+    }   
 }
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package atv;
 
 /**
@@ -77,14 +52,27 @@ public class Pilha {
     }
 
     public boolean full() {
-        return (topo == tam_max);
+        if (topo == tam_max) {
+            Agenda[] itens2 = new Agenda[tam_max * 2];
+            for (int i = 0; i == tam_max; i++) {
+                itens2[i] = itens[i];
+            }
+            itens = new Agenda[tam_max * 2];
+            for (int i = 0; i == tam_max; i++) {
+                itens[i] = itens2[i];
+            }
+            tam_max = tam_max * 2;
+            return true;
+        }
+        return false;
     }
 
     public void pop() {
-        for (int i = 0; i < (topo - 1); i++) {
-            itens[i] = itens[i + 1];
-        }
         topo--;
+    }
+
+    public int size() {
+        return topo;
     }
 
 }

@@ -4,39 +4,99 @@
  * and open the template in the editor.
  */
 package atv;
+import javax.swing.*;
+/**
+ *
+ * @author mateus
+ */
+public class atv {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Pilha p = new Pilha(3);
+        if(!p.full()) p.push("Julio",958675548);
+        else System.out.println("Pilha cheia");
+        if(!p.full()) p.push("Maria",958648658);
+        else System.out.println("Pilha cheia");
+        if(!p.full()) p.push("Paula",965879654);
+        else System.out.println("Pilha cheia");
+        if(!p.full()) p.push("Vitor",957867554);
+        else System.out.println("Pilha cheia");
+        System.out.println(p.top());
+        String x=JOptionPane.showInputDialog("""
+                                             Programa Pilha
+                                             0: Sair
+                                             1: Inserir itens
+                                             2: Remover itens
+                                             3: Imprimir Tamanho
+                                             4: Imprimir Iten Topo""");
+        switch (x){
+            case "1": JOptionPane.showInputDialog("Programa Pilha"+
+                "\n0: Sair"+
+                "\n1: Inserir itens"+
+                "\n2: Remover itens"+
+                "\n3: Imprimir Tamanho"+
+                "\n4: Imprimir Iten Topo");
+        }
+        
+    }
+    
+}
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package atv;
 
 /**
  *
- * @author 12117022
+ * @author mateus
  */
-public class Agenda {
+public class Pilha {
 
-    public String[] contatos;
-    public int fim;
-    public int tam_max;
+    private int topo;
+    private int tam_max;
+    private Agenda[] itens;
 
-    public Agenda(int ct) {
-        contatos = new String[ct];
+    public Pilha(int n) {
+        itens = new Agenda[n];
+        tam_max = n;
+        topo = 0;
     }
 
-    public void push(String n) {
-        contatos[fim] = n;
-        fim++;
+    public void push(String nome, long tel) {
+        itens[topo] = new Agenda(nome, tel);
+        topo++;
+    }
+
+    public String top() {
+        return itens[topo - 1].nome + "  " + itens[topo - 1].tel;
+    }
+
+    public boolean full() {
+        return (topo == tam_max);
     }
 
     public void pop() {
-        for (int i = 0; i < (fim - 1); i++) {
-            contatos[i] = contatos[i + 1];
+        for (int i = 0; i < (topo - 1); i++) {
+            itens[i] = itens[i + 1];
         }
-        fim--;
-        contatos[fim] = "";
+        topo--;
     }
-    public boolean full(){
-        if(fim == tam_max){
-            return true;
-            int novo = ct*2;
-        }
-        else 
-            return false;
+
+}
+package atv;
+
+public class Agenda {
+
+    public String nome;
+    public long tel;
+
+    public Agenda(String nm, long t) {
+        nome = nm;
+        tel = t;
     }
 }

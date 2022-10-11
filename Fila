@@ -1,0 +1,60 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package filas1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ *
+ * @author mateus
+ */
+public class Filas1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        String letra;
+        int aux = 1;
+        char[] Maiusculas = new char[aux];
+        char[] Minusculas = new char[aux];
+        boolean teste = true;
+        while (teste) {
+            for (int i = 0; i < aux; i++) {
+                System.out.println("Digite um caractere: ");
+                letra = ler.nextLine();
+                if ("".equals(letra)) {
+                    teste = false;
+                } else if (Character.isUpperCase(letra.charAt(0))) {
+                    Maiusculas[i] = letra.charAt(0);
+                    for ( i = 0; i < aux; i++) {
+                        char[] novovetor = new char[aux + 1];
+                        novovetor[i] = Maiusculas[i];
+                        Maiusculas = new char[aux + 1];
+                        Maiusculas[i] = novovetor[i];
+                    }
+                } else {
+                    Minusculas[i] = letra.charAt(0);
+                    for (int j = 0; j < aux; j++) {
+                        char[] novovetor = new char[aux + 1];
+                        novovetor[j] = Minusculas[j];
+                        Minusculas = new char[aux + 1];
+                        Minusculas[j] = novovetor[j];
+                    }
+                }
+            }
+        }
+        for (int j = 0; j < Maiusculas.length ; j++) {
+            System.out.println(Maiusculas[j]);
+        }
+        for (int j = 0; j < Maiusculas.length ; j++) {
+            System.out.println(Maiusculas[j]);
+        }
+
+    }
+}

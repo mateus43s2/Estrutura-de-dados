@@ -51,8 +51,8 @@ public class Filas1 {
         for (int j = 0; j < Maiusculas.length ; j++) {
             System.out.println(Maiusculas[j]);
         }
-        for (int j = 0; j < Maiusculas.length ; j++) {
-            System.out.println(Maiusculas[j]);
+        for (int j = 0; j < Minusculas.length ; j++) {
+            System.out.println(Minusculas[j]);
         }
 
     }
